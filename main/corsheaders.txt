@@ -1,0 +1,28 @@
+***corsheaders***
+https://github.com/adamchainz/django-cors-headers
+
+pip install django-cors-headers --> Yükle
+
+INSTALLED_APPS = [
+    ...,
+    "corsheaders",
+    ...,
+] --> Setting'se Ekle.
+
+MIDDLEWARE = [
+    ...,
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    ...,
+] --> Setting'se Ekle.
+
+CORS_ALLOW_ALL_ORIGINS = True  --> Setting'se Ekle. Bütün URL'lere izin verir. Kısıtlamak için döküman.
+
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+] --> Yöntemleri Setting'se Ekle.

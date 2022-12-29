@@ -11,8 +11,8 @@ class TutorialSerializer(serializers.ModelSerializer):
             'id',
             'title',
             'description',
-            'priority',
-            'is_done',
-            'created_date',
+            # 'priority',
+            # 'is_done',
+            'created',
         )
         # API'de gösterilecek Field'ler.

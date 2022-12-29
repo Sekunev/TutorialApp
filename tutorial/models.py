@@ -12,7 +12,8 @@ class Tutorial(models.Model):
     priority = models.SmallIntegerField(choices=PRIORITY, default=2)
     is_done = models.BooleanField(default=False)
     updated_date = models.DateTimeField(auto_now=True)
-    created_date = models.DateTimeField(auto_now_add=True)
+    #! CursorPagination
+    created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title

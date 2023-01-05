@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework import routers
-
+from .views import tutorial_detail, tutorial_list
 
 from .views import (
     # Tutorials,
@@ -11,6 +11,11 @@ from .views import (
 router = routers.DefaultRouter()
 router.register('tutorials', TutorialMVS)
 
-urlpatterns = [
-    path('', include(router.urls))
+urlpatterns = router.urls
+
+
+#fbv
+urlpatterns += [
+    path("tutorialsfbv/",tutorial_list,name="tutorial"),
+    path("tutorialsfbv/<int:id>",tutorial_detail,name="tutorial_detail"),
 ]

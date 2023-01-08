@@ -4,7 +4,7 @@
 
 ### Visualization of the Website
 
-![image](https://github.com/Sekunev/Stock-App/blob/main/src/assets/AnimationProject.gif)
+![image](https://github.com/Sekunev/TutorialApp/blob/main/client/assest/AnimationProject.gif)
 
 ```
 # KURULUM KOMUTLARI

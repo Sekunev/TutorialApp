@@ -1,0 +1,69 @@
+import axios from "axios";
+import { useState } from "react";
+
+const AddTutorial = ({ getTutorials }) => {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    //! const newTutor = { title: title, description: description };
+    //? eğer değişken isimlerini (keyleri) değiştirmeyeceksek sadece value'leri aşağıdaki gibi yazabiliriz.
+    const newTutor = { title, description };
+    addTutorial(newTutor);
+    setTitle("");
+    setDescription("");
+  };
+
+  //!POST -CRUD (create)
+  const addTutorial = async (newTutor) => {
+    const url = "http://127.0.0.1:8000/api/tutorials/";
+    try {
+      // axios da post yapmak için post metodunu kullanmalıyız. post metodu 2 parametre alır. 1. url 2. gönderilecek veri'dir.
+      await axios.post(url, newTutor);
+    } catch (error) {
+      console.log(error);
+    }
+    getTutorials();
+  };
+
+  return (
+    <div className="container text-center mt-4">
+      <h1 className="display-6 text-danger">Add Your Tutorial</h1>
+      <form onSubmit={handleSubmit}>
+        <div className="mb-3">
+          <label htmlFor="title" className="form-label">
+            Title
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="title"
+            placeholder="Enter your title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="desc" className="form-label">
+            Description
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="description"
+            placeholder="Enter your Description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            required
+          />
+        </div>
+        {/* form içersindeki buton çalıştığında form onSubmit eventı devreye giriyor. */}
+        <button className="btn btn-danger mb-4">Submit</button>
+      </form>
+    </div>
+  );
+};
+
+export default AddTutorial;

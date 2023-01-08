@@ -2,12 +2,11 @@
 
 # Full Stack Project Tutorial App- Backend
 
-```
-
 ### Visualization of the Website
 
 ![image](https://github.com/Sekunev/Stock-App/blob/main/src/assets/AnimationProject.gif)
 
+```
 # KURULUM KOMUTLARI
    1 py -m venv env
    2 .\env\Scripts\activate

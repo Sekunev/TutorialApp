@@ -10,7 +10,8 @@ const TutorialList = ({ tutorials, getTutorials }) => {
 
   //! DELETE (CRUD-Delete)
   const deleteTutorial = async (id) => {
-    const url = "http://127.0.0.1:8000/api/tutorials";
+    // const url = "http://127.0.0.1:8000/api/tutorials";
+    const url = "https://sekune.pythonanywhere.com/api/tutorials";
     try {
       await axios.delete(`${url}/${id}/`);
     } catch (error) {

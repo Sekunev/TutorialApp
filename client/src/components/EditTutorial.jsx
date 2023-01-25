@@ -27,7 +27,8 @@ const EditTutorial = ({ getTutorials, editItem }) => {
 
   //! Update (PUT:Whole Update,PATCH :Partially Update)
   const editTutorial = async (id, tutor) => {
-    const url = "http://127.0.0.1:8000/api/tutorials";
+    // const url = "http://127.0.0.1:8000/api/tutorials";
+    const url = "https://sekune.pythonanywhere.com/api/tutorials";
     try {
       await axios.put(`${url}/${id}/`, tutor);
     } catch (error) {

@@ -6,9 +6,10 @@ import { useEffect, useState } from "react";
 const Home = () => {
   const [tutorials, setTutorials] = useState([]);
 
-  const url = "http://127.0.0.1:8000/api/tutorials/";
+  // const url = "http://127.0.0.1:8000/api/tutorials/";
+  const url = "https://sekune.pythonanywhere.com/api/tutorials/";
 
-  //? CRUD : (GET-READ) --> Mülakat-interview aksi belirtilmezse axios da ilk yapılan işlem get işlemidir. CRUD deki "R"yi yapmış olduk.
+  // CRUD : (GET-READ) --> Mülakat-interview aksi belirtilmezse axios da ilk yapılan işlem get işlemidir. CRUD deki "R"yi yapmış olduk.
   const getTutorials = async () => {
     try {
       const { data } = await axios(url);

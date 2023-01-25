@@ -17,7 +17,8 @@ const AddTutorial = ({ getTutorials }) => {
 
   //!POST -CRUD (create)
   const addTutorial = async (newTutor) => {
-    const url = "http://127.0.0.1:8000/api/tutorials/";
+    // const url = "http://127.0.0.1:8000/api/tutorials/";
+    const url = "https://sekune.pythonanywhere.com/api/tutorials/";
     try {
       // axios da post yapmak için post metodunu kullanmalıyız. post metodu 2 parametre alır. 1. url 2. gönderilecek veri'dir.
       await axios.post(url, newTutor);
